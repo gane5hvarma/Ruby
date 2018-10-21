@@ -23,11 +23,7 @@ class MergeSortAlgorithm
     
       return right_array if left_array.empty? # We have nothing to compare. Right wins.
 
-    smallest_number = if left_array.first <= right_array.first
-      left_array.shift
-    else
-      right_array.shift
-    end
+    smallest_number = if left_array.first <= right_array.first then left_array.shift else right_array.shift end
 
     # We keep doing it until the left or right array is empty.
     recursive = merge(left_array, right_array)
