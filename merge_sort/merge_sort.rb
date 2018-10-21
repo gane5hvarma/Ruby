@@ -1,9 +1,7 @@
 class MergeSortAlgorithm
   # Break's the array down into two numbers (number A and number B) and sorts them.
   def sort(numbers)
-    if numbers.size <= 1
-      return numbers
-    end
+    return number if numbers.size <= 1
 
     array_size   = numbers.size
     half_of_size = (array_size / 2).round
@@ -19,13 +17,11 @@ class MergeSortAlgorithm
 
   # This then creates a new array, loops through the left/right arrays and places the lowest number into the array. 
   def merge(left_array, right_array)
-    if right_array.empty?
-      return left_array # We have nothing to compare. Left wins.
-    end
+   
+      return left_array if right_array.empty?# We have nothing to compare. Left wins.
 
-    if left_array.empty?
-      return right_array # We have nothing to compare. Right wins.
-    end
+    
+      return right_array if left_array.empty? # We have nothing to compare. Right wins.
 
     smallest_number = if left_array.first <= right_array.first
       left_array.shift
